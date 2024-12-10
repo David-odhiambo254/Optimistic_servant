@@ -73,10 +73,7 @@
                             </li>
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('user-identity-verify-request-list')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.user.verification.request'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.user.verification.request')); ?>">
-                                    <?php echo e(__('Identity Verify Requests')); ?> </a>
-                            </li>
+                            
                         <?php endif; ?>
                         <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.user.add'])): ?> selected <?php endif; ?>">
                             <a href="<?php echo e(route('admin.user.add')); ?>">
@@ -85,24 +82,10 @@
                     </ul>
                 </li>
 
-                <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.integration'])): ?> active <?php endif; ?>">
-                    <a href="<?php echo e(route('admin.integration')); ?>"> <i
-                                class="fa-solid fa-plug"></i><?php echo e(__('Integrations')); ?></a>
-                </li>
+                
 
                 <?php if(moduleExists('PluginManage')): ?>
-                <li
-                        class="dashboard__bottom__list__item has-children <?php if(request()->is('admin/plugin-manage*')): ?> active open show <?php endif; ?>">
-                    <a href="javascript:void(0)"> <i class="fa-solid fa-user"></i> <?php echo e(__('Plugin Manage')); ?> </a>
-                    <ul class="submenu">
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.plugin.manage.all'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.plugin.manage.all')); ?>"> <?php echo e(__('All Plugins')); ?> </a>
-                            </li>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.plugin.manage.new'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.plugin.manage.new')); ?>"> <?php echo e(__('Add Plugin')); ?> </a>
-                            </li>
-                    </ul>
-                </li>
+                
                 <?php endif; ?>
 
                     
@@ -235,25 +218,7 @@
                     </li>
                 <?php endif; ?>
 
-                <li
-                    class="dashboard__bottom__list__item has-children <?php if(request()->is('admin/project*')): ?> active open show <?php endif; ?>">
-                    <a href="javascript:void(0)"> <i class="fa-solid fa-file-word"></i><?php echo e(__('Projects')); ?> </a>
-                    <ul class="submenu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('project-list')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.project'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.project')); ?>"> <?php echo e(__('All Projects')); ?> </a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('project-history-list')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.project.history'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.project.history')); ?>"> <?php echo e(__('Project History')); ?> </a>
-                            </li>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.project.approval.settings'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.project.approval.settings')); ?>"> <?php echo e(__('Auto Approval Settings')); ?> </a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
+                
 
                 <li
                     class="dashboard__bottom__list__item has-children <?php if(request()->is('admin/job*')): ?> active open show <?php endif; ?>">
@@ -322,39 +287,7 @@
                     </ul>
                 </li>
 
-                <li
-                    class="dashboard__bottom__list__item has-children <?php if(request()->is('admin/subscription*')): ?> active open show <?php endif; ?>">
-                    <a href="javascript:void(0)"> <i class="fa-solid fa-list"></i><?php echo e(__('Subscription Manage')); ?>
-
-                    </a>
-                    <ul class="submenu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('subscription-type-list')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.subscription.type.all'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.subscription.type.all')); ?>"> <?php echo e(__('Subscription Type')); ?> </a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('subscription-list')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.subscription.all', 'admin.subscription.add', 'admin.subscription.edit'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.subscription.all')); ?>"> <?php echo e(__('All Subscriptions')); ?> </a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('subscription-connect-settings-view')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.subscription.limit.settings'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.subscription.limit.settings')); ?>">
-                                    <?php echo e(__('Subscription Connect Settings')); ?> </a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('user-subscription-list')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.user.subscription.all'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.user.subscription.all')); ?>"> <?php echo e(__('User Subscriptions')); ?> </a>
-                            </li>
-                        <?php endif; ?>
-                        <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.free.subscription.settings'])): ?> selected <?php endif; ?>">
-                            <a href="<?php echo e(route('admin.free.subscription.settings')); ?>">
-                                <?php echo e(__('Free Subscription Settings')); ?> </a>
-                        </li>
-                    </ul>
-                </li>
+                
 
                 <?php if(auth()->guard('admin')->user()->role == 1): ?>
                     <li
@@ -403,26 +336,9 @@
                     </ul>
                 </li>
 
-                <li class="dashboard__bottom__list__item has-children <?php if(request()->is('admin/user-report*')): ?> active open show <?php endif; ?>">
-                    <a href="javascript:void(0)"> <i class="fa-solid fa-list"></i><?php echo e(__('User Report Manage')); ?> </a>
-                    <ul class="submenu">
-                        <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.user.report.all'])): ?> selected <?php endif; ?>">
-                            <a href="<?php echo e(route('admin.user.report.all')); ?>"> <?php echo e(__('All Reports')); ?> </a>
-                        </li>
-                    </ul>
-                </li>
+                
 
-                <li class="dashboard__bottom__list__item has-children <?php if(request()->is('admin/newsletter*')): ?> active open show <?php endif; ?>">
-                    <a href="javascript:void(0)"> <i class="fa-solid fa-list"></i><?php echo e(__('Newsletter Manage')); ?> </a>
-                    <ul class="submenu">
-                        <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.newsletter.email.all'])): ?> selected <?php endif; ?>">
-                            <a href="<?php echo e(route('admin.newsletter.email.all')); ?>"> <?php echo e(__('All Emails')); ?> </a>
-                        </li>
-                        <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.newsletter.email.send.to.all'])): ?> selected <?php endif; ?>">
-                            <a href="<?php echo e(route('admin.newsletter.email.send.to.all')); ?>"> <?php echo e(__('Email to All')); ?> </a>
-                        </li>
-                    </ul>
-                </li>
+                
 
                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('blog-list')): ?>
                 <li class="dashboard__bottom__list__item has-children <?php if(request()->is('admin/blog*')): ?> active open show <?php endif; ?>">
@@ -458,24 +374,9 @@
                         <?php endif; ?>
                     </ul>
                 </li>
-                <li class="dashboard__bottom__list__item has-children <?php if(request()->is('admin/notification/*')): ?> active open show <?php endif; ?>">
-                    <a href="javascript:void(0)"> <i class="fa-solid fa-list"></i><?php echo e(__('Notifications')); ?> </a>
-                    <ul class="submenu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('notification-list')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.notification.all'])): ?> active <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.notification.all')); ?>"> <i class="fa-solid fa-bell"></i><?php echo e(__('All Notifications')); ?></a>
-                            </li>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.notification.all'])): ?> active <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.notification.settings')); ?>"> <i class="fa-solid fa-bell"></i><?php echo e(__('Notification Settings')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
+                
 
-                <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.pusher.settings'])): ?> active <?php endif; ?>">
-                    <a href="<?php echo e(route('admin.pusher.settings')); ?>"> <i
-                            class="fa-regular fa-message"></i><?php echo e(__('Chat Settings')); ?></a>
-                </li>
+                
 
                 <li
                     class="dashboard__bottom__list__item has-children <?php if(request()->is('admin/page-settings*')): ?> active open show <?php endif; ?>">
@@ -574,15 +475,10 @@
                             </li>
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('site-identity')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.general.settings.site.identity'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.general.settings.site.identity')); ?>">
-                                    <?php echo e(__('Site Identity')); ?> </a>
-                            </li>
+                            
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('basic-settings')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.general.settings.basic'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.general.settings.basic')); ?>"> <?php echo e(__('Basic Settings')); ?> </a>
-                            </li>
+                            
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('color-settings')): ?>
                             <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.general.settings.color'])): ?> selected <?php endif; ?>">
@@ -596,9 +492,7 @@
                             </li>
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('seo-settings')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.general.settings.seo'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.general.settings.seo')); ?>"> <?php echo e(__('Seo Settings')); ?> </a>
-                            </li>
+                            
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('third-party-script-settings')): ?>
                             <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.general.settings.third.party.script'])): ?> selected <?php endif; ?>">
@@ -635,9 +529,7 @@
                             </li>
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('gdpr-settings')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.general.settings.gdpr'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.general.settings.gdpr')); ?>"> <?php echo e(__('GDPR Settings')); ?> </a>
-                            </li>
+                            
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('cache-settings')): ?>
                             <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.general.settings.cache'])): ?> selected <?php endif; ?>">
@@ -645,20 +537,10 @@
                             </li>
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('database-upgrade')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.general.settings.database.upgrade'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.general.settings.database.upgrade')); ?>">
-                                    <?php echo e(__('Database Upgrade')); ?> </a>
-                            </li>
+                            
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('generate-license-key')): ?>
-                        <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.license.settings'])): ?> selected <?php endif; ?>">
-                            <a href="<?php echo e(route('admin.license.settings')); ?>">
-                                <?php echo e(__('License Settings')); ?> </a>
-                        </li>
-                        <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.software.update.settings'])): ?> selected <?php endif; ?>">
-                            <a href="<?php echo e(route('admin.software.update.settings')); ?>">
-                                <?php echo e(__('Check Update')); ?> </a>
-                        </li>
+                        
                         <?php endif; ?>
                     </ul>
                 </li>
@@ -674,12 +556,7 @@
                                 </a>
                             </li>
                         <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('payment-gateway-settings')): ?>
-                            <li class="dashboard__bottom__list__item <?php if(request()->routeIs(['admin.payment.settings.gateway'])): ?> selected <?php endif; ?>">
-                                <a href="<?php echo e(route('admin.payment.settings.gateway')); ?>">
-                                    <?php echo e(__('Payment Gateway Settings')); ?> </a>
-                            </li>
-                        <?php endif; ?>
+                        
                     </ul>
                 </li>
 

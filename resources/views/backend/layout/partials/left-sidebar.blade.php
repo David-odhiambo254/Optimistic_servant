@@ -78,10 +78,10 @@
                             </li>
                         @endcan
                         @can('user-identity-verify-request-list')
-                            <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.user.verification.request'])) selected @endif">
+                            {{-- <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.user.verification.request'])) selected @endif">
                                 <a href="{{ route('admin.user.verification.request') }}">
                                     {{ __('Identity Verify Requests') }} </a>
-                            </li>
+                            </li> --}}
                         @endcan
                         <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.user.add'])) selected @endif">
                             <a href="{{ route('admin.user.add') }}">
@@ -90,13 +90,13 @@
                     </ul>
                 </li>
 
-                <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.integration'])) active @endif">
+                {{-- <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.integration'])) active @endif">
                     <a href="{{ route('admin.integration') }}"> <i
                                 class="fa-solid fa-plug"></i>{{ __('Integrations') }}</a>
-                </li>
+                </li> --}}
 
                 @if(moduleExists('PluginManage'))
-                <li
+                {{-- <li
                         class="dashboard__bottom__list__item has-children @if (request()->is('admin/plugin-manage*')) active open show @endif">
                     <a href="javascript:void(0)"> <i class="fa-solid fa-user"></i> {{ __('Plugin Manage') }} </a>
                     <ul class="submenu">
@@ -107,7 +107,7 @@
                                 <a href="{{ route('admin.plugin.manage.new') }}"> {{ __('Add Plugin') }} </a>
                             </li>
                     </ul>
-                </li>
+                </li> --}}
                 @endif
 
                     {{-- //External Menu Render--}}
@@ -237,7 +237,7 @@
                     </li>
                 @endcan
 
-                <li
+                {{-- <li
                     class="dashboard__bottom__list__item has-children @if (request()->is('admin/project*')) active open show @endif">
                     <a href="javascript:void(0)"> <i class="fa-solid fa-file-word"></i>{{ __('Projects') }} </a>
                     <ul class="submenu">
@@ -255,7 +255,7 @@
                             </li>
                         @endcan
                     </ul>
-                </li>
+                </li> --}}
 
                 <li
                     class="dashboard__bottom__list__item has-children @if (request()->is('admin/job*')) active open show @endif">
@@ -322,7 +322,7 @@
                     </ul>
                 </li>
 
-                <li
+                {{-- <li
                     class="dashboard__bottom__list__item has-children @if (request()->is('admin/subscription*')) active open show @endif">
                     <a href="javascript:void(0)"> <i class="fa-solid fa-list"></i>{{ __('Subscription Manage') }}
                     </a>
@@ -353,7 +353,7 @@
                                 {{ __('Free Subscription Settings') }} </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 @if (auth()->guard('admin')->user()->role == 1)
                     <li
@@ -401,16 +401,16 @@
                     </ul>
                 </li>
 
-                <li class="dashboard__bottom__list__item has-children @if (request()->is('admin/user-report*')) active open show @endif">
+                {{-- <li class="dashboard__bottom__list__item has-children @if (request()->is('admin/user-report*')) active open show @endif">
                     <a href="javascript:void(0)"> <i class="fa-solid fa-list"></i>{{ __('User Report Manage') }} </a>
                     <ul class="submenu">
                         <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.user.report.all'])) selected @endif">
                             <a href="{{ route('admin.user.report.all') }}"> {{ __('All Reports') }} </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
-                <li class="dashboard__bottom__list__item has-children @if (request()->is('admin/newsletter*')) active open show @endif">
+                {{-- <li class="dashboard__bottom__list__item has-children @if (request()->is('admin/newsletter*')) active open show @endif">
                     <a href="javascript:void(0)"> <i class="fa-solid fa-list"></i>{{ __('Newsletter Manage') }} </a>
                     <ul class="submenu">
                         <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.newsletter.email.all'])) selected @endif">
@@ -420,7 +420,7 @@
                             <a href="{{ route('admin.newsletter.email.send.to.all') }}"> {{ __('Email to All') }} </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 @can('blog-list')
                 <li class="dashboard__bottom__list__item has-children @if (request()->is('admin/blog*')) active open show @endif">
@@ -456,7 +456,7 @@
                         @endcan
                     </ul>
                 </li>
-                <li class="dashboard__bottom__list__item has-children @if (request()->is('admin/notification/*')) active open show @endif">
+                {{-- <li class="dashboard__bottom__list__item has-children @if (request()->is('admin/notification/*')) active open show @endif">
                     <a href="javascript:void(0)"> <i class="fa-solid fa-list"></i>{{ __('Notifications') }} </a>
                     <ul class="submenu">
                         @can('notification-list')
@@ -468,12 +468,12 @@
                             </li>
                         @endcan
                     </ul>
-                </li>
+                </li> --}}
 
-                <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.pusher.settings'])) active @endif">
+                {{-- <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.pusher.settings'])) active @endif">
                     <a href="{{ route('admin.pusher.settings') }}"> <i
                             class="fa-regular fa-message"></i>{{ __('Chat Settings') }}</a>
-                </li>
+                </li> --}}
 
                 <li
                     class="dashboard__bottom__list__item has-children @if (request()->is('admin/page-settings*')) active open show @endif">
@@ -570,15 +570,15 @@
                             </li>
                         @endcan
                         @can('site-identity')
-                            <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.site.identity'])) selected @endif">
+                            {{-- <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.site.identity'])) selected @endif">
                                 <a href="{{ route('admin.general.settings.site.identity') }}">
                                     {{ __('Site Identity') }} </a>
-                            </li>
+                            </li> --}}
                         @endcan
                         @can('basic-settings')
-                            <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.basic'])) selected @endif">
+                            {{-- <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.basic'])) selected @endif">
                                 <a href="{{ route('admin.general.settings.basic') }}"> {{ __('Basic Settings') }} </a>
-                            </li>
+                            </li> --}}
                         @endcan
                         @can('color-settings')
                             <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.color'])) selected @endif">
@@ -592,9 +592,9 @@
                             </li>
                         @endcan
                         @can('seo-settings')
-                            <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.seo'])) selected @endif">
+                            {{-- <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.seo'])) selected @endif">
                                 <a href="{{ route('admin.general.settings.seo') }}"> {{ __('Seo Settings') }} </a>
-                            </li>
+                            </li> --}}
                         @endcan
                         @can('third-party-script-settings')
                             <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.third.party.script'])) selected @endif">
@@ -630,9 +630,9 @@
                             </li>
                         @endcan
                         @can('gdpr-settings')
-                            <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.gdpr'])) selected @endif">
+                            {{-- <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.gdpr'])) selected @endif">
                                 <a href="{{ route('admin.general.settings.gdpr') }}"> {{ __('GDPR Settings') }} </a>
-                            </li>
+                            </li> --}}
                         @endcan
                         @can('cache-settings')
                             <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.cache'])) selected @endif">
@@ -640,20 +640,20 @@
                             </li>
                         @endcan
                         @can('database-upgrade')
-                            <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.database.upgrade'])) selected @endif">
+                            {{-- <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.general.settings.database.upgrade'])) selected @endif">
                                 <a href="{{ route('admin.general.settings.database.upgrade') }}">
                                     {{ __('Database Upgrade') }} </a>
-                            </li>
+                            </li> --}}
                         @endcan
                         @can('generate-license-key')
-                        <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.license.settings'])) selected @endif">
+                        {{-- <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.license.settings'])) selected @endif">
                             <a href="{{ route('admin.license.settings') }}">
                                 {{ __('License Settings') }} </a>
                         </li>
                         <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.software.update.settings'])) selected @endif">
                             <a href="{{ route('admin.software.update.settings') }}">
                                 {{ __('Check Update') }} </a>
-                        </li>
+                        </li> --}}
                         @endcan
                     </ul>
                 </li>
@@ -668,12 +668,12 @@
                                 </a>
                             </li>
                         @endcan
-                        @can('payment-gateway-settings')
+                        {{-- @can('payment-gateway-settings')
                             <li class="dashboard__bottom__list__item @if (request()->routeIs(['admin.payment.settings.gateway'])) selected @endif">
                                 <a href="{{ route('admin.payment.settings.gateway') }}">
                                     {{ __('Payment Gateway Settings') }} </a>
                             </li>
-                        @endcan
+                        @endcan --}}
                     </ul>
                 </li>
 

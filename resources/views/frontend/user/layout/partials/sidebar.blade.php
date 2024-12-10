@@ -60,7 +60,7 @@
                                 {{ __('My Orders') }}
                             </a>
                         </li>
-                        <li class="profile-settings-menu-item">
+                        {{-- <li class="profile-settings-menu-item">
                             <a href="{{ route('freelancer.offers') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +79,7 @@
                                 </svg>
                                 {{ __('My Offers') }}
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="profile-settings-menu-item">
                             <a href="{{ route('freelancer.proposal') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +144,7 @@
                                 {{ __('Withdraw History') }}
                             </a>
                         </li>
-                        <li class="profile-settings-menu-item @if (request()->routeIs('freelancer.subscriptions.all')) active @endif">
+                        {{-- <li class="profile-settings-menu-item @if (request()->routeIs('freelancer.subscriptions.all')) active @endif">
                             <a href="{{ route('freelancer.subscriptions.all') }}"
                                 class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -161,7 +161,7 @@
                                 </svg>
                                 {{ __('Subscriptions') }}
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="profile-settings-menu-item @if (request()->routeIs('freelancer.live.chat')) active @endif">
                             <a href="{{ route('freelancer.live.chat') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -214,7 +214,7 @@
                                 {{ __('Account Setup') }}
                             </a>
                         </li>
-                        <li class="profile-settings-menu-item @if (request()->routeIs('freelancer.identity.verification')) active @endif">
+                        {{-- <li class="profile-settings-menu-item @if (request()->routeIs('freelancer.identity.verification')) active @endif">
                             <a href="{{ route('freelancer.identity.verification') }}"
                                 class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -240,8 +240,8 @@
                                 </svg>
                                 {{ __('Identity Verification') }}
                             </a>
-                        </li>
-                        <li class="profile-settings-menu-item @if (request()->routeIs('freelancer._2fa')) active @endif">
+                        </li> --}}
+                        {{-- <li class="profile-settings-menu-item @if (request()->routeIs('freelancer._2fa')) active @endif">
                             <a href="{{ route('freelancer._2fa') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -254,7 +254,7 @@
                                 </svg>
                                 {{ __('2 Factor Authentication') }}
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="profile-settings-menu-item">
                             <a href="{{ route('freelancer.profile.details', Auth::guard('web')->user()->username) }}"
                                 class="profile-settings-menu-item-link">
@@ -401,7 +401,7 @@
                                 {{ __('My Orders') }}
                             </a>
                         </li>
-                        <li class="profile-settings-menu-item">
+                        {{-- <li class="profile-settings-menu-item">
                             <a href="{{ route('client.offers') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -420,7 +420,7 @@
                                 </svg>
                                 {{ __('My Offers') }}
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="profile-settings-menu-item @if (request()->routeIs('client.wallet.history')) active @endif">
                             <a href="{{ route('client.wallet.history') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -455,7 +455,7 @@
                                 {{ __('Support tickets') }}
                             </a>
                         </li>
-                        <li class="profile-settings-menu-item @if (request()->routeIs('client.reports.all')) active @endif">
+                        {{-- <li class="profile-settings-menu-item @if (request()->routeIs('client.reports.all')) active @endif">
                             <a href="{{ route('client.reports.all') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5.1499 22.75C4.7399 22.75 4.3999 22.41 4.3999 22V2C4.3999 1.59 4.7399 1.25 5.1499 1.25C5.5599 1.25 5.8999 1.59 5.8999 2V22C5.8999 22.41 5.5599 22.75 5.1499 22.75Z" fill="#667085"/>
@@ -463,7 +463,7 @@
                                 </svg>
                                 {{ __('All Reports') }}
                             </a>
-                        </li>
+                        </li> --}}
 
                         <li class="profile-settings-menu-item">
                             <a href="{{ route('client.live.chat') }}" class="profile-settings-menu-item-link">
@@ -482,7 +482,7 @@
                                 {{ __('Live Chat') }}
                             </a>
                         </li>
-                        <li class="profile-settings-menu-item @if (request()->routeIs('client._2fa')) active @endif">
+                        {{-- <li class="profile-settings-menu-item @if (request()->routeIs('client._2fa')) active @endif">
                             <a href="{{ route('client._2fa') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -495,7 +495,7 @@
                                 </svg>
                                 {{ __('2 Factor Authentication') }}
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="profile-settings-menu-item @if (request()->routeIs('client.password')) active @endif">
                             <a href="{{ route('client.password') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -527,7 +527,7 @@
                                 {{ __('Profile Settings') }}
                             </a>
                         </li>
-                        <li class="profile-settings-menu-item @if (request()->routeIs('client.identity.verification')) active @endif">
+                        {{-- <li class="profile-settings-menu-item @if (request()->routeIs('client.identity.verification')) active @endif">
                             <a href="{{ route('client.identity.verification') }}"
                                 class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -553,7 +553,7 @@
                                 </svg>
                                 {{ __('Identity Verification') }}
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="profile-settings-menu-item">
                             <a href="{{ route('client.logout') }}" class="profile-settings-menu-item-link">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
